@@ -1,42 +1,55 @@
-const generaBtn = document.querySelector('#generaBtn')
-const ressetBtn = document.querySelector('#resetBtn')
+// Buttons const
+const generaBtn = document.querySelector('#generaBtn');
+const resetBtn = document.querySelector('#resetBtn');
 
-generaBtn.addEventListener('click', 
-    function () {
-        const nameLastname = document.getElementById('nameLastname');
-        const msgNameLastname = nameLastname.value;
-        alert(msgNameLastname);
+// The inputs const
+const nameLastnameInput = document.querySelector('#nameLastname');
+const nameAnswer = document.querySelector('#nameAnswer');
 
-        const yourDistance = document.getElementById('yourDistance');
-        const msgYourDistance = yourDistance.value;
-        alert(msgYourDistance);
+// Get the selected option from the dropdown list
+const ageSelect = document.getElementById('yourAge');
+const selectedOption = ageSelect.options[ageSelect.selectedIndex].value;
 
-        const yourAge = document.getElementById('yourAge');
-        alert(yourAge.value);
-    }
+// Get the value entered in the input field
+const distanceInput = document.getElementById('yourDistance');
+const distance = parseFloat(distanceInput.value);
+console.log('distance:', distance);
 
-); 
+// Calculate the cost per kilometer
+const costPerKm = distance * 0.21;
+console.log('costPerKm:', costPerKm);
 
-resetBtn.addEventListener('click', 
-    function () {
-        const nameLastname = document.getElementById('nameLastname');
-        nameLastname.value  = '';
-    }
+// Apply the discount based on the selected option
+let discount = 0;
+if (selectedOption === 'Discount under 18') {
+  discount = 0.2;
+} else if (selectedOption === 'Discont over 65') {
+  discount = 0.4;
+}
+console.log('discount:', discount);
 
-);
+// Calculate the total cost
+const totalCost = (1 - discount) * costPerKm;
+console.log('totalCost:', totalCost);
 
-// const myDistance = prompt("How many kilometers do you have to travel?");
-// const myAge = prompt("How old are you");
+// Get the HTML element to display the final cost
+const priceAnswer = document.getElementById('distancePriceAnswer');
 
-// myDistance = Number(myDistance);
-// myAge = Number(myAge);
+// Set the text of the HTML element to the total cost
+priceAnswer.textContent = `The total cost is $${totalCost.toFixed(2)}`;
+// Get the selected option from the dropdown list
 
-// // Calculate the cost based on the distance and rate
-// const myCost = myDistance * 0.21;
-// myCost = Number(myCost);
+generaBtn.addEventListener('click', function () {
+    // Get the value of the input field
+    const nameLastname = nameLastnameInput.value;
 
-// if (myAge < 18) {
-//   myCost *= 0.8; // Apply a 20% discount for users under 18
-// } else if (myAge >= 65) {
-//   myCost *= 0.6; // Apply a 40% discount for users 65 and over
-// }
+    // Set the text content of the nameAnswer paragraph element
+    nameAnswer.textContent = nameLastname;
+});
+
+resetBtn.addEventListener('click', function () {
+    // Reset the input field
+    nameLastnameInput.value = '';
+    // Reset the input field
+    nameAnswer.textContent = '';
+});
