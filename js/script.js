@@ -1,55 +1,57 @@
-// Buttons const
-const generaBtn = document.querySelector('#generaBtn');
-const resetBtn = document.querySelector('#resetBtn');
+// Get the "Genera" button
+const generateButton = document.getElementById('generaBtn');
 
-// The inputs const
-const nameLastnameInput = document.querySelector('#nameLastname');
-const nameAnswer = document.querySelector('#nameAnswer');
+// Add an event listener to the button
+generateButton.addEventListener('click', () => {
+  // Get the selected option from the dropdown list
+  const ageSelect = document.getElementById('yourAge');
+  const selectedOption = ageSelect.options[ageSelect.selectedIndex].value;
 
-// Get the selected option from the dropdown list
-const ageSelect = document.getElementById('yourAge');
-const selectedOption = ageSelect.options[ageSelect.selectedIndex].value;
+  // Get the value entered in the input field
+  const distanceInput = document.getElementById('yourDistance');
+  const distance = parseFloat(distanceInput.value);
 
-// Get the value entered in the input field
-const distanceInput = document.getElementById('yourDistance');
-const distance = parseFloat(distanceInput.value);
-console.log('distance:', distance);
+  // Calculate the cost per kilometer
+  const costPerKm = distance * 0.21;
 
-// Calculate the cost per kilometer
-const costPerKm = distance * 0.21;
-console.log('costPerKm:', costPerKm);
+  // Apply the discount based on the selected option
+  let discount = 0;
+  if (selectedOption === 'Discount under 18') {
+    discount = 0.2;
+  } else if (selectedOption === 'Discont over 65') {
+    discount = 0.4;
+  }
 
-// Apply the discount based on the selected option
-let discount = 0;
-if (selectedOption === 'Discount under 18') {
-  discount = 0.2;
-} else if (selectedOption === 'Discont over 65') {
-  discount = 0.4;
-}
-console.log('discount:', discount);
+  // Calculate the total cost
+  const totalCost = (1 - discount) * costPerKm;
 
-// Calculate the total cost
-const totalCost = (1 - discount) * costPerKm;
-console.log('totalCost:', totalCost);
+  // Get the HTML elements to display the results
+  const nameAnswer = document.getElementById('nameAnswer');
+  const distancePriceAnswer = document.getElementById('distancePriceAnswer');
+  const ageAnswer = document.getElementById('ageAnswer');
 
-// Get the HTML element to display the final cost
-const priceAnswer = document.getElementById('distancePriceAnswer');
+  // Get the value entered in the name field
+  const nameInput = document.getElementById('nameLastname');
+  const name = nameInput.value;
 
-// Set the text of the HTML element to the total cost
-priceAnswer.textContent = `The total cost is $${totalCost.toFixed(2)}`;
-// Get the selected option from the dropdown list
-
-generaBtn.addEventListener('click', function () {
-    // Get the value of the input field
-    const nameLastname = nameLastnameInput.value;
-
-    // Set the text content of the nameAnswer paragraph element
-    nameAnswer.textContent = nameLastname;
+  // Set the text of the HTML elements to the results
+  nameAnswer.textContent = `Nome e Cognome: ${name}`;
+  distancePriceAnswer.textContent = `Prezzo totale: ${totalCost.toFixed(2)} €.`;
+  ageAnswer.textContent = `Fascia di età: ${selectedOption}`;
 });
 
-resetBtn.addEventListener('click', function () {
-    // Reset the input field
-    nameLastnameInput.value = '';
-    // Reset the input field
-    nameAnswer.textContent = '';
+// Get the "Annulla" button
+const resetButton = document.getElementById('resetBtn');
+
+// Add an event listener to the button
+resetButton.addEventListener('click', () => {
+  // Reset the form
+  document.getElementById('nameLastname').value = '';
+  document.getElementById('yourDistance').value = '';
+  document.getElementById('yourAge').selectedIndex = 0;
+
+  // Reset the results
+  document.getElementById('nameAnswer').textContent = '';
+  document.getElementById('distancePriceAnswer').textContent = '';
+  document.getElementById('ageAnswer').textContent = '';
 });
