@@ -34,9 +34,22 @@ generateButton.addEventListener('click', () => {
   const nameInput = document.getElementById('nameLastname');
   const name = nameInput.value;
 
+  // Prints a random number between 1 and 10
+  const yourWagonElement = document.getElementById("yourWagon");
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
+  console.log(randomNumber);
+
+  // Prints a random number between 900 and 1000
+  const yourTicketElement = document.getElementById("yourTicket");
+  const randomTicket = Math.floor(Math.random() * 801) + 100;
+  console.log(randomTicket);
+
+
   // Set the text of the HTML elements to the results
   nameAnswer.textContent = `Nome e Cognome: ${name}`;
   distancePriceAnswer.textContent = `Prezzo totale: ${totalCost.toFixed(2)} €.`;
+  yourWagonElement.textContent = randomNumber;
+  yourTicketElement.textContent = randomTicket;
   ageAnswer.textContent = `Fascia di età: ${selectedOption}`;
 });
 
