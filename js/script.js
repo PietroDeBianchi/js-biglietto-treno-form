@@ -67,4 +67,6 @@ resetButton.addEventListener('click', () => {
   document.getElementById('nameAnswer').textContent = '';
   document.getElementById('distancePriceAnswer').textContent = '';
   document.getElementById('ageAnswer').textContent = '';
+  document.getElementById('yourWagon').textContent = '';
+  document.getElementById('yourTicket').textContent = '';
 });
