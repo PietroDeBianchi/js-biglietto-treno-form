@@ -23,9 +23,16 @@ generaBtn.addEventListener('click',
         const nameLastname = document.getElementById('nameLastname');
         const msgNameLastname = nameLastname.value;
         alert(msgNameLastname);
+
+        const yourDistance = document.getElementById('yourDistance');
+        const msgYourDistance = yourDistance.value;
+        alert(msgYourDistance);
+
+        const yourAge = document.getElementById('yourAge');
+        alert(yourAge.value);
     }
 
-);
+); 
 
 resetBtn.addEventListener('click', 
     function () {
