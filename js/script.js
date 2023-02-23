@@ -16,9 +16,9 @@ generateButton.addEventListener('click', () => {
 
   // Apply the discount based on the selected option
   let discount = 0;
-  if (selectedOption === 'Discount under 18') {
+  if (selectedOption === 'Tariffa under 18') {
     discount = 0.2;
-  } else if (selectedOption === 'Discont over 65') {
+  } else if (selectedOption === 'Tariffa over 65') {
     discount = 0.4;
   }
 
@@ -46,11 +46,11 @@ generateButton.addEventListener('click', () => {
 
 
   // Set the text of the HTML elements to the results
-  nameAnswer.textContent = `Nome e Cognome: ${name}`;
-  distancePriceAnswer.textContent = `Prezzo totale: ${totalCost.toFixed(2)} €.`;
+  nameAnswer.textContent = `${name}`;
+  distancePriceAnswer.textContent = `${totalCost.toFixed(2)} €.`;
   yourWagonElement.textContent = randomNumber;
   yourTicketElement.textContent = randomTicket;
-  ageAnswer.textContent = `Fascia di età: ${selectedOption}`;
+  ageAnswer.textContent = `${selectedOption}`;
 });
 
 // Get the "Annulla" button
@@ -61,7 +61,7 @@ resetButton.addEventListener('click', () => {
   // Reset the form
   document.getElementById('nameLastname').value = '';
   document.getElementById('yourDistance').value = '';
-  document.getElementById('yourAge').selectedIndex = 0;
+  document.getElementById('yourAge').selectedIndex = '';
 
   // Reset the results
   document.getElementById('nameAnswer').textContent = '';

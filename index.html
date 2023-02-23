@@ -12,41 +12,47 @@
 </head>
 <body>
 
-    <main>
-        <div>
-            <form>
-                <div>
-                    <label for="messagge">Nome e Cognome</label>
-                    <input type="text" id="nameLastname">
+    <main class="flexer justify-center">
+        <div id="container" class="flexer justify-center">
+            <section id="my-data" class="flexer">
+                <form class="flexer" id="my-form">
+                    <div>
+                        <label for="messagge">Nome e Cognome</label>
+                        <br>
+                        <input type="text" id="nameLastname">
+                    </div>
+            
+                    <div>
+                        <label for="distance">Km da percorrere</label>
+                        <br>
+                        <input type="number" id="yourDistance">
+                    </div>
+            
+                    <div>
+                        <label for="age">Fascia di età</label>
+                        <br>
+                        <select id="yourAge">
+                            <option value="Tariffa under 18">Under 18</option>
+                            <option value="Full Price">Adult</option>
+                            <option value="Tariffa over 65">Over 65</option>
+                        </select>
+                    </div>
+                </form>
+                <div id="my-button">
+                    <button id="generaBtn">Genera</button>
+                    <button id="resetBtn">Annulla</button>
                 </div>
-        
-                <div>
-                    <label for="distance">Km da percorrere</label>
-                    <input type="number" id="yourDistance">
-                </div>
-        
-                <div>
-                    <label for="age">Fascia di età</label>
-                    <select id="yourAge">
-                        <option value="Discount under 18">Under 18</option>
-                        <option value="Full Price">Adult</option>
-                        <option value="Discont over 65">Over 65</option>
-                    </select>
-                </div>
-            </form>
-            <div>
-                <button id="generaBtn">Genera</button>
-                <button id="resetBtn">Annulla</button>
-            </div>
+            </section>
+    
+            <section id="my-ticket" class="flexer">
+                <p id="nameAnswer"></p>
+                <p id="ageAnswer"></p>
+                <p id="yourWagon"></p>
+                <p id="yourTicket"></p>
+                <p id="distancePriceAnswer"></p>
+            </disectionv>
         </div>
-
-        <div>
-            <p id="nameAnswer"></p>
-            <p id="distancePriceAnswer"></p>
-            <p id="yourWagon"></p>
-            <p id="yourTicket"></p>
-            <p id="ageAnswer"></p>
-        </div>
+       
     </main>
     
     <script type="text/javascript" src="js/script.js"></script>

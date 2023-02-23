@@ -5,3 +5,56 @@
     box-sizing: border-box;
     font-family: 'Martian Mono', monospace;
 }
+/* UTILITY TAG */
+
+.flexer {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+/* MAIN STYLE */
+main {
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+section {
+    width: 72%;
+    height: 24%;
+}
+
+#container {
+    width: 72%;
+    height: 48%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right, green , white, red);
+}
+
+/* MY-DATAT STYLE */
+#my-form {
+    justify-content: space-between;
+}
+
+#my-data {
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+#my-ticket {
+    justify-content: space-evenly;
+}
+
+#my-button {
+    text-align: center;
+}
+
+#my-button button {
+    font-size: 1rem;
+}
