@@ -14,6 +14,7 @@
 
     <main class="flexer justify-center">
         <div id="container" class="flexer justify-center">
+            <h1 style="font-size: 1.5rem;">Il tuo viaggio in Italia</h1>
             <section id="my-data" class="flexer">
                 <form class="flexer" id="my-form">
                     <div>
@@ -32,9 +33,9 @@
                         <label for="age">Fascia di età</label>
                         <br>
                         <select id="yourAge">
-                            <option value="Full Price">Adulto</option>
-                            <option value="Tariffa under 18">Under 18</option>
-                            <option value="Tariffa over 65">Over 65</option>
+                            <option value="Adult">Adulto</option>
+                            <option value="Under 18">Under 18</option>
+                            <option value="0ver 65">Over 65</option>
                         </select>
                     </div>
                 </form>
@@ -45,11 +46,26 @@
             </section>
     
             <section id="my-ticket" class="flexer">
-                <p id="nameAnswer"></p>
-                <p id="ageAnswer"></p>
-                <p id="yourWagon"></p>
-                <p id="yourTicket"></p>
-                <p id="distancePriceAnswer"></p>
+                <div>
+                    <span class="ticketSpan">Viaggiatore:</span>
+                    <p id="nameAnswer"></p>
+                </div>
+                <div>
+                    <span class="ticketSpan">Tariffa:</span>
+                    <p id="ageAnswer"></p>
+                </div>
+                <div>
+                    <span class="ticketSpan">Numero vagone:</span>
+                    <p id="yourWagon"></p>
+                </div>
+                <div>
+                    <span class="ticketSpan">Numero biglietto:</span>
+                    <p id="yourTicket"></p>
+                </div>
+                <div>
+                    <span class="ticketSpan">Costo biglietto:</span>
+                    <p id="distancePriceAnswer"></p>
+                </div>
             </disectionv>
         </div>
        

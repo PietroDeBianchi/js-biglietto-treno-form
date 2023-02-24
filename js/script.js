@@ -17,9 +17,9 @@ generateButton.addEventListener('click', () => {
 
   // Apply the discount based on the selected option
   let discount = 0;
-  if (selectedOption === 'Tariffa under 18') {
+  if (selectedOption === 'Under 18') {
     discount = 0.2;
-  } else if (selectedOption === 'Tariffa over 65') {
+  } else if (selectedOption === 'Over 65') {
     discount = 0.4;
   }
 
@@ -60,6 +60,7 @@ generateButton.addEventListener('click', () => {
     mainDisplay.style.visibility = 'visible';
   }
 });
+
 
 
 // Get the "Annulla" button
