@@ -3,6 +3,7 @@ const generateButton = document.getElementById('generaBtn');
 
 // Add an event listener to the button
 generateButton.addEventListener('click', () => {
+
   // Get the selected option from the dropdown list
   const ageSelect = document.getElementById('yourAge');
   const selectedOption = ageSelect.options[ageSelect.selectedIndex].value;
@@ -39,9 +40,9 @@ generateButton.addEventListener('click', () => {
   const randomNumber = Math.floor(Math.random() * 10) + 1;
   console.log(randomNumber);
 
-  // Prints a random number between 900 and 1000
+  // Prints a random number between 100 and 1000
   const yourTicketElement = document.getElementById("yourTicket");
-  const randomTicket = Math.floor(Math.random() * 801) + 100;
+  const randomTicket = Math.floor(Math.random() * 902) + 100;
   console.log(randomTicket);
 
 
@@ -51,7 +52,15 @@ generateButton.addEventListener('click', () => {
   yourWagonElement.textContent = randomNumber;
   yourTicketElement.textContent = randomTicket;
   ageAnswer.textContent = `${selectedOption}`;
+
+  const mainDisplay = document.getElementById('my-ticket');
+  if (distanceInput.value === '' && nameInput.value === '') {
+    mainDisplay.style.visibility = 'hidden';
+  } else {
+    mainDisplay.style.visibility = 'visible';
+  }
 });
+
 
 // Get the "Annulla" button
 const resetButton = document.getElementById('resetBtn');
@@ -70,3 +79,4 @@ resetButton.addEventListener('click', () => {
   document.getElementById('yourWagon').textContent = '';
   document.getElementById('yourTicket').textContent = '';
 });
+
